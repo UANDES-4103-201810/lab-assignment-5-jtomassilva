@@ -1,6 +1,6 @@
 class TicketsController < ApplicationController
   def create
-    @ticket = Ticket.new(params[:id])
+    @ticket = Ticket.new(params[:ticket])
     if @ticket.save
       redirect_to @ticket
     else
@@ -22,6 +22,6 @@ class TicketsController < ApplicationController
   end
 
   def show
-    @ticket = Ticket.show(params[:id])
+    @ticket = Ticket.find(params[:id])
   end
 end

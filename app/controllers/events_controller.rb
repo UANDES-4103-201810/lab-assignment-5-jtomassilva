@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   def create
-    @event = Event.new(params[:id])
+    @event = Event.new(params[:event])
     if @event.save
       redirect_to @event
     else
@@ -22,6 +22,6 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.show(params[:id])
+    @event = Event.find(params[:id])
   end
 end

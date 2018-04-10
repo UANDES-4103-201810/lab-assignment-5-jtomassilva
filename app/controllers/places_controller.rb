@@ -1,6 +1,6 @@
 class PlacesController < ApplicationController
   def create
-    @place = Place.new(params[:id])
+    @place = Place.new(params[:place])
     if @place.save
       redirect_to @place
     else
@@ -22,6 +22,6 @@ class PlacesController < ApplicationController
   end
 
   def show
-    @place = Place.show(params[:id])
+    @place = Place.find(params[:id])
   end
 end
